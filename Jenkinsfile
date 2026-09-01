@@ -9,10 +9,10 @@ pipeline {
     }
     
     // 触发器 - 可选配置
-    triggers {
-        // 每次代码提交后自动触发构建
-        // pollSCM('H/5 * * * *')
-    }
+    // triggers {
+    //     // 每次代码提交后自动触发构建
+    //     // pollSCM('H/5 * * * *')
+    // }
     
     stages {
         // Stage 1: 检出代码
@@ -20,9 +20,11 @@ pipeline {
             steps {
                 echo 'Checking out source code...'
                 checkout scm
-                sh 'git rev-parse HEAD > COMMIT_ID'
-                def commitId = readFile('COMMIT_ID').trim()
-                echo "Commit: ${commitId}"
+                script {
+                    sh 'git rev-parse HEAD > COMMIT_ID'
+                    def commitId = readFile('COMMIT_ID').trim()
+                    echo "Commit: ${commitId}"
+                }
             }
         }
         
