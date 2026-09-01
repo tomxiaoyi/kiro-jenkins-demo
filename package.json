@@ -1,0 +1,22 @@
+{
+  "name": "kiro-jenkins-demo",
+  "version": "1.0.0",
+  "description": "A simple Node.js Express app for testing Jenkins CI/CD",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "express",
+    "demo",
+    "kiro",
+    "jenkins"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

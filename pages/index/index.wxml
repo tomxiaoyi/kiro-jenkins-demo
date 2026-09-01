@@ -1,0 +1,55 @@
+<!-- pages/index/index.wxml - 首页结构 -->
+<view class="container">
+  
+  <!-- 标题区域 -->
+  <view class="header">
+    <text class="title">{{message}}</text>
+    <text class="subtitle">欢迎来到我的第一个小程序</text>
+  </view>
+
+  <!-- 用户信息 -->
+  <view class="user-section" wx:if="{{userInfo}}">
+    <image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="username">欢迎，{{userInfo.nickName}}</text>
+  </view>
+
+  <!-- 时间显示 -->
+  <view class="time-section" wx:if="{{showTimestamp}}">
+    <text class="time-label">当前时间</text>
+    <text class="time-value">{{currentTime}}</text>
+  </view>
+
+  <!-- 功能按钮区域 -->
+  <view class="button-section">
+    <button class="btn btn-primary" bindtap="onTapButton">
+      点击我 ({{clickCount}})
+    </button>
+    
+    <button class="btn btn-success" bindtap="copyMessage">
+      复制消息
+    </button>
+    
+    <button class="btn btn-warning" bindtap="toggleTimestamp">
+      {{showTimestamp ? '隐藏时间' : '显示时间'}}
+    </button>
+  </view>
+
+  <!-- 列表区域 -->
+  <view class="list-section">
+    <text class="section-title">水果列表</text>
+    <view class="list">
+      <block wx:for="{{items}}" wx:key="id">
+        <view class="list-item" bindtap="onItemTap" data-id="{{item.id}}" data-name="{{item.name}}">
+          <text class="item-icon">{{item.icon}}</text>
+          <text class="item-name">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 底部信息 -->
+  <view class="footer">
+    <text class="footer-text">小程序版本: 1.0.0</text>
+  </view>
+
+</view>

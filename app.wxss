@@ -1,0 +1,57 @@
+/* app.wxss - 全局样式 */
+
+/* 页面通用容器 */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+/* 通用按钮样式 */
+.btn {
+  padding: 20rpx 40rpx;
+  margin: 20rpx;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #1890ff;
+  color: white;
+}
+
+.btn-success {
+  background-color: #52c41a;
+  color: white;
+}
+
+.btn-warning {
+  background-color: #faad14;
+  color: white;
+}
+
+/* 通用文本样式 */
+.text-primary {
+  color: #1890ff;
+}
+
+.text-success {
+  color: #52c41a;
+}
+
+.text-warning {
+  color: #faad14;
+}
+
+.text-danger {
+  color: #f5222d;
+}
+
+.text-center {
+  text-align: center;
+}
